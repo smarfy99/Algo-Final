@@ -11,9 +11,7 @@ public class BOJ_2294_동전2 {
     static StringTokenizer st;
 
     static int coinCnt, total;
-    static int[] arr;
-
-    static int left, use;
+    static int[] arr, dp;
 
     public static void main(String[] args) throws IOException, NumberFormatException {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -30,18 +28,19 @@ public class BOJ_2294_동전2 {
 
         Arrays.sort(arr);
 
-        left = total;
-        use = 0;
+        dp = new int[total+1];
+        Arrays.fill(dp, Integer.MAX_VALUE-1);
+        dp[0] = 0;
 
-        for(int idx=coinCnt-1; idx>=0; idx--){
-            if(left >= arr[idx]){
-                int mok = left / arr[idx];
-                use += mok;
-                left -= mok * arr[idx];
+        for(int idx=0; idx<coinCnt; idx++){
+            for(int k = arr[idx]; k <= total; k++){
+                dp[k] = Math.min(dp[k], dp[k-arr[idx]]+1);
             }
         }
 
-        System.out.println(use);
+        int answer = dp[total] == Integer.MAX_VALUE-1 ? -1 : dp[total];
+
+        System.out.println(answer);
     }
 }
 
