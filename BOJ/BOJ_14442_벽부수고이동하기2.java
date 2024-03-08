@@ -63,6 +63,8 @@ public class BOJ_14442_벽부수고이동하기2 {
     public static int bfs() {
         Queue<int[]> que = new ArrayDeque<>();
         visited = new boolean[row][col][maxBreak+1];
+        //초기 위치 방문 처리
+        visited[0][0][maxBreak] = true;
         que.add(new int[] {0,0,maxBreak, 1}); //위치x,y,이동횟수(현재위치 포함),남은 벽부수기 기회
 
         int cnt = -1; //불가능하면 -1 출력이니까
@@ -78,8 +80,27 @@ public class BOJ_14442_벽부수고이동하기2 {
                 cnt = move;
                 return cnt;
             }
-            // 맵 밖으로 벗어나는 경우는 무시
 
+            //델타배열
+            for(int idx=0; idx<4; idx++){
+                int nx = px + dx[idx];
+                int ny = py + dy[idx];
+
+                if(nx<0 || ny<0 || nx>row-1 || ny>col-1 || visited[nx][ny][chance])
+                    continue;
+
+                if(map[nx][ny] == 0 && !visited[nx][ny][chance]){
+                    visited[nx][ny][chance] = true;
+                    que.add(new int[] {nx, ny, chance, move+1});
+                } else {
+                    if(map[nx][ny] == 1 && chance > 0 && !visited[nx][ny][chance-1]) { //벽을 부수고 이동하는 경우
+                        visited[nx][ny][chance-1] = true;
+                        que.add(new int[] {nx, ny, chance-1, move+1});
+                    }
+                }
+            }
         }
+
+        return cnt;
     }
 }
