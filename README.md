@@ -13,4 +13,4 @@ Start : 2024.2.26 ~
 | 03/08 | BOJ | 2573 | 빙산 | [풀이](https://github.com/smarfy99/Algo-Final/blob/main/BOJ/BOJ_2573_%EB%B9%99%EC%82%B0.java) | 11828kb | 108ms |
 | 03/11 | PROGRAMMERS  | Lv2 | 주식가격 | [풀이](https://github.com/smarfy99/Algo-Final/blob/main/PROGRAMMERS/Lv2.%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9.java) |  |  |
 | 03/12 | PROGRAMMERS  | SQL | SUM,MAX,MIN | [풀이](https://github.com/smarfy99/Algo-Final/tree/main/SQL/sum%2Cmax%2Cmin) |  |  |
-| 03/12 | PROGRAMMERS  | SQL | SUM,MAX,MIN | [풀이](https://github.com/smarfy99/Algo-Final/tree/main/SQL/sum%2Cmax%2Cmin) |  |  |
+| 03/19 | BOJ  | 3190 | 뱀 | [풀이]() |  |  |
