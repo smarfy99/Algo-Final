@@ -32,14 +32,10 @@ public class BOJ_2573_빙산 {
 
     static int row, col;
     static int[][] map;
-    static boolean[][] visited;
 
     //상하좌우
     static int[] dx = {-1,1,0,0};
     static int[] dy = {0,0,-1,1};
-
-    //0이 아닌 빙산의 부분 리스트
-    static List<Ice> ice = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, NumberFormatException {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -62,8 +58,17 @@ public class BOJ_2573_빙산 {
 
         //빙하가 2개 이상 분리될 경우 반복문 종료
         //빙하가 다 녹으면 0출력
-        while((cnt == separateIce() < 2))
+        while((cnt = separateIce()) < 2) {
+            if(cnt == 0) {
+                answer = 0;
+                break;
+            }
 
+            melt();
+            answer++;
+        }
+        System.out.println(answer);
+        br.close();
     }
 
     //dfs
