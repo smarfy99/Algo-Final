@@ -14,3 +14,4 @@ Start : 2024.2.26 ~
 | 03/11 | PROGRAMMERS  | Lv2 | 주식가격 | [풀이](https://github.com/smarfy99/Algo-Final/blob/main/PROGRAMMERS/Lv2.%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9.java) |  |  |
 | 03/12 | PROGRAMMERS  | SQL | SUM,MAX,MIN | [풀이](https://github.com/smarfy99/Algo-Final/tree/main/SQL/sum%2Cmax%2Cmin) |  |  |
 | 03/19 | BOJ  | 3190 | 뱀 | [풀이]() |  |  |
+| 03/21 | BOJ  | 20922 | 겹치는 건 싫어 | [풀이]() |  |  |
